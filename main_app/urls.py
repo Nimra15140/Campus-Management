@@ -83,8 +83,8 @@ urlpatterns = [
          hod_views.edit_course, name='edit_course'),
     path("subject/edit/<int:subject_id>",
          hod_views.edit_subject, name='edit_subject'),
-    path("admin/calendar/", hod_views.calendar, name='calendar'),
-    path("admin/reports/", hod_views.reports, name='reports'),    
+    path("admin/calendar/", hod_views.hod_calendar, name='hod_calendar'),
+    path("admin/reports/", hod_views.hod_reports, name='hod_reports'),    
 
 
     # Staff
@@ -113,9 +113,9 @@ urlpatterns = [
          name='edit_student_result'),
     path('staff/result/fetch/', staff_views.fetch_student_result,
          name='fetch_student_result'),
-    path("staff/calendar/", staff_views.calendar, name='calendar'),
-    path("staff/reports/", staff_views.reports, name='reports'),    
-
+    path("staff/calendar/", staff_views.staff_calendar, name='staff_calendar'),
+    path("staff/reports/", staff_views.staff_reports, name='staff_reports'),    
+    path("staff/faq/", staff_views.staff_faq, name='staff_faq'),
 
 
     # Student
@@ -134,7 +134,7 @@ urlpatterns = [
          name="student_view_notification"),
     path('student/view/result/', student_views.student_view_result,
          name='student_view_result'),
-    path("student/calendar/", student_views.calendar, name='calendar'),
-    path("student/reports/", student_views.reports, name='reports'),    
-
+    path("student/calendar/", student_views.student_calendar, name='student_calendar'),
+    path("student/reports/", student_views.student_reports, name='student_reports'),    
+    path("student/faq/", student_views.student_faq, name='student_faq'),
 ]

@@ -167,24 +167,33 @@ def staff_apply_leave(request):
             messages.error(request, "Form has errors!")
     return render(request, "staff_template/staff_apply_leave.html", context)
 
-def reports(request):
+def staff_reports(request):
     
     context = {
-        'subjects': reports,
+        'subjects': staff_reports,
         'page_title': 'Report'
     }
 
     return render(request, 'staff_template/reports.html', context)
 
 
-def calendar(request):
+def staff_calendar(request):
     
     context = {
-        'subjects': calendar,
+        'subjects': staff_calendar,
         'page_title': 'Write Event'
     }
 
     return render(request, 'staff_template/calendar.html', context)
+
+def staff_faq(request):
+    
+    context = {
+        'subjects': staff_faq,
+        'page_title': 'Write Event'
+    }
+
+    return render(request, 'staff_template/staff_faq.html', context)
 
 
 def staff_feedback(request):

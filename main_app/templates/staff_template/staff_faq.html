@@ -1,0 +1,126 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{page_title}}{% endblock page_title %}
+
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{page_title}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" id="accordion">
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                1. What are Facilities provided to Students?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            Transport Service, Parking Area, Waiting Area , Library, Cafeteria , and Fully Equiped Labs.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                2. Who is the Principal of FG PG College For Women Wah Cantt?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Madam Rubab is the new Principal of FG PG College For Women Wah Cantt. 
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                3. How many courses college is offering in BS Degree Programme?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                           College is offering Seven Different courses in BS Degree Programme.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-warning card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseFour">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                4. From which university FG College is affiliated?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            FG College is affiliated with University of Punjab.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-warning card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseFive">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                5. Where is FG PG College located?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            FG PG College is located near Aslam Market , WAh Cantt.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-warning card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseSix">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                6. Is College understaffed?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            No. College has fully trained, experienced and capable teachers.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-danger card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseSeven">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                7. Is there any cocurricular activities for students?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Yes, College students participate in different activities at Regional Level, National Level . 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+{% endblock content %}

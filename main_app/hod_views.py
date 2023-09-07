@@ -219,19 +219,19 @@ def faq_template(request):
         'page_title': 'FAQ'
     }
     return render(request, "hod_template/faq_template.html", context)
-def calendar(request):
+def hod_calendar(request):
     
     context = {
-        'subjects': calendar,
+        'subjects': hod_calendar,
         'page_title': 'Write Event'
     }
 
     return render(request, 'hod_template/calendar.html', context)
-def reports(request):
+def hod_reports(request):
     
     context = {
-        'subjects': reports,
-        'page_title': 'Reports'
+        'subjects': hod_reports,
+        'page_title': 'Report Generate'
     }
 
     return render(request, 'hod_template/reports.html', context)

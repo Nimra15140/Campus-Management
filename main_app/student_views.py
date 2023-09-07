@@ -109,22 +109,30 @@ def student_apply_leave(request):
             messages.error(request, "Form has errors!")
     return render(request, "student_template/student_apply_leave.html", context)
 
-def reports(request):
+def student_reports(request):
     
     context = {
-        'subjects': reports,
+        'subjects': student_reports,
         'page_title': 'Reports'
     }
 
     return render(request, 'student_template/reports.html', context)
-def calendar(request):
+def student_calendar(request):
     
     context = {
-        'subjects': calendar,
+        'subjects': student_calendar,
         'page_title': 'Write Event'
     }
 
     return render(request, 'student_template/calendar.html', context)
+def student_faq(request):
+    
+    context = {
+        'subjects': student_faq,
+        'page_title': 'Write Event'
+    }
+
+    return render(request, 'student_template/student_faq.html', context)
 
 def student_feedback(request):
     form = FeedbackStudentForm(request.POST or None)

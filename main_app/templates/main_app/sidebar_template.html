@@ -356,9 +356,9 @@
                 </li>
 
                 <li class="nav-item">
-                    {% url 'calendar' as calendar %}
-                    <a href="{{calendar}}"
-                        class="nav-link {% if reports == request.path %} active {% endif %}">
+                    {% url 'hod_calendar' as hod_calendar %}
+                    <a href="{{hod_calendar}}"
+                        class="nav-link {% if hod_calendar == request.path %} active {% endif %}">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Calendar
@@ -367,12 +367,12 @@
                 </li>
 
                 <li class="nav-item">
-                    {% url 'reports' as reports %}
-                    <a href="{{reports}}"
-                        class="nav-link {% if reports == request.path %} active {% endif %}">
+                    {% url 'hod_reports' as hod_reports %}
+                    <a href="{{hod_reports}}"
+                        class="nav-link {% if hod_reports == request.path %} active {% endif %}">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                            Reports
+                            Reports Generate
                         </p>
                     </a>
                 </li>
@@ -539,9 +539,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                {% url 'calendar' as calendar %}
-                                <a href="{{calendar}}"
-                                    class="nav-link {% if reports == request.path %} active {% endif %}">
+                                {% url 'staff_calendar' as staff_calendar %}
+                                <a href="{{staff_calendar}}"
+                                    class="nav-link {% if staff_calendar == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-calendar-alt"></i>
                                     <p>
                                         Calendar
@@ -550,12 +550,24 @@
                             </li>
 
                             <li class="nav-item">
-                                {% url 'reports' as reports %}
-                                <a href="{{reports}}"
-                                    class="nav-link {% if reports == request.path %} active {% endif %}">
+                                {% url 'staff_reports' as staff_reports %}
+                                <a href="{{staff_reports}}"
+                                    class="nav-link {% if staff_reports == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
-                                        Reports
+                                        Report Generate
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                {% url 'staff_faq' as staff_faq %}
+                                <a href="{{staff_faq}}"
+                                    class="nav-link {% if staff_faq == request.path %} active {% endif %}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        FAQ
+            
                                     </p>
                                 </a>
                             </li>
@@ -658,9 +670,9 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            {% url 'calendar' as calendar %}
-                                            <a href="{{calendar}}"
-                                                class="nav-link {% if reports == request.path %} active {% endif %}">
+                                            {% url 'student_calendar' as student_calendar %}
+                                            <a href="{{student_calendar}}"
+                                                class="nav-link {% if student_calendar == request.path %} active {% endif %}">
                                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                                 <p>
                                                     Calendar
@@ -669,12 +681,23 @@
                                         </li>
             
                                         <li class="nav-item">
-                                            {% url 'reports' as reports %}
-                                            <a href="{{reports}}"
-                                                class="nav-link {% if reports == request.path %} active {% endif %}">
+                                            {% url 'student_reports' as student_reports %}
+                                            <a href="{{student_reports}}"
+                                                class="nav-link {% if student_reports == request.path %} active {% endif %}">
                                                 <i class="nav-icon fas fa-book"></i>
                                                 <p>
                                                     Reports
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            {% url 'student_faq' as student_faq %}
+                                            <a href="{{student_faq}}"
+                                                class="nav-link {% if student_faq == request.path %} active {% endif %}">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    FAQ
+                        
                                                 </p>
                                             </a>
                                         </li>
