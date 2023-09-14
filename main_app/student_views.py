@@ -115,8 +115,11 @@ def student_reports(request):
         'subjects': student_reports,
         'page_title': 'Reports'
     }
-
     return render(request, 'student_template/reports.html', context)
+
+
+
+    
 def student_calendar(request):
     
     context = {

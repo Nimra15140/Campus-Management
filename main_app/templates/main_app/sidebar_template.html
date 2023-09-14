@@ -53,7 +53,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-bookmark"></i>
                         <p>
-                            Course
+                            Departments
                             <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
@@ -64,7 +64,7 @@
                                 class="nav-link  {% if add_course == request.path %} active {% endif %}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Add Course
+                                    Add Department
 
                                 </p>
                             </a>
@@ -76,7 +76,7 @@
                                 class="nav-link  {% if edit_course == request.path or manage_course == request.path %} active {% endif %}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Manage Course
+                                    Manage Department
 
                                 </p>
                             </a>
@@ -91,7 +91,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                            Subject
+                            Subjects
                             <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
@@ -127,7 +127,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            Session
+                            Sessions
                             <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
@@ -359,12 +359,15 @@
                     {% url 'hod_calendar' as hod_calendar %}
                     <a href="{{hod_calendar}}"
                         class="nav-link {% if hod_calendar == request.path %} active {% endif %}">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
+                        <i class="nav-icon fas fa-calendar"></i>
                         <p>
                             Calendar
                         </p>
                     </a>
                 </li>
+
+                
+
 
                 <li class="nav-item">
                     {% url 'hod_reports' as hod_reports %}
@@ -372,7 +375,7 @@
                         class="nav-link {% if hod_reports == request.path %} active {% endif %}">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                            Reports Generate
+                            Generate Reports
                         </p>
                     </a>
                 </li>
@@ -538,16 +541,34 @@
                                     </p>
                                 </a>
                             </li>
+                            
+
+                            <li class="nav-item">
+                                {% url 'staff_feedback' as staff_feedback %}
+                                <a href="{{staff_feedback}}"
+                                    class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
+                                    <i class="nav-icon fas fa-comment"></i>
+                                    <p>
+                                        Feedback Message
+
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-header">Apps</li>
+                            
                             <li class="nav-item">
                                 {% url 'staff_calendar' as staff_calendar %}
                                 <a href="{{staff_calendar}}"
                                     class="nav-link {% if staff_calendar == request.path %} active {% endif %}">
-                                    <i class="nav-icon fas fa-calendar-alt"></i>
+                                    <i class="nav-icon fas fa-calendar"></i>
                                     <p>
                                         Calendar
                                     </p>
                                 </a>
                             </li>
+
+                            
 
                             <li class="nav-item">
                                 {% url 'staff_reports' as staff_reports %}
@@ -555,7 +576,7 @@
                                     class="nav-link {% if staff_reports == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
-                                        Report Generate
+                                        Generate Reports
                                     </p>
                                 </a>
                             </li>
@@ -571,20 +592,10 @@
                                     </p>
                                 </a>
                             </li>
+                             
 
-                            <li class="nav-item">
-                                {% url 'staff_feedback' as staff_feedback %}
-                                <a href="{{staff_feedback}}"
-                                    class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
-                                    <i class="nav-icon fas fa-comment"></i>
-                                    <p>
-                                        Feedback Message
 
-                                    </p>
-                                </a>
-                            </li>
 
-                            <li class="nav-header">Apps</li>
 
                             {% else %}
                             <!-- Brand Logo -->
@@ -669,16 +680,35 @@
                                                 </p>
                                             </a>
                                         </li>
+                                        
+
                                         <li class="nav-item">
+                                            {% url 'student_feedback' as student_feedback %}
+                                            <a href="{{student_feedback}}"
+                                                class="nav-link {% if student_feedback == request.path %} active {% endif %}">
+                                                <i class="nav-icon fas fa-comment"></i>
+                                                <p>
+                                                    Feedback Message
+
+                                                </p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-header">Apps</li>
+
+                                         <li class="nav-item">
                                             {% url 'student_calendar' as student_calendar %}
                                             <a href="{{student_calendar}}"
                                                 class="nav-link {% if student_calendar == request.path %} active {% endif %}">
-                                                <i class="nav-icon fas fa-calendar-alt"></i>
+                                                <i class="nav-icon fas fa-calendar"></i>
                                                 <p>
                                                     Calendar
                                                 </p>
                                             </a>
                                         </li>
+
+                                        
+            
             
                                         <li class="nav-item">
                                             {% url 'student_reports' as student_reports %}
@@ -686,7 +716,7 @@
                                                 class="nav-link {% if student_reports == request.path %} active {% endif %}">
                                                 <i class="nav-icon fas fa-book"></i>
                                                 <p>
-                                                    Reports
+                                                   Generate Reports
                                                 </p>
                                             </a>
                                         </li>
@@ -702,17 +732,8 @@
                                             </a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            {% url 'student_feedback' as student_feedback %}
-                                            <a href="{{student_feedback}}"
-                                                class="nav-link {% if student_feedback == request.path %} active {% endif %}">
-                                                <i class="nav-icon fas fa-comment"></i>
-                                                <p>
-                                                    Feedback Message
 
-                                                </p>
-                                            </a>
-                                        </li>
+
 
                                         {% endif %}
 

@@ -26,7 +26,7 @@ def staff_home(request):
         subject_list.append(subject.name)
         attendance_list.append(attendance_count)
     context = {
-        'page_title': 'Staff Panel - ' + str(staff.admin.last_name) + ' (' + str(staff.course) + ')',
+        'page_title': 'Staff Panel - ' + str(staff.admin.first_name) + ' (' + str(staff.course) + ')',
         'total_students': total_students,
         'total_attendance': total_attendance,
         'total_leave': total_leave,
@@ -171,10 +171,13 @@ def staff_reports(request):
     
     context = {
         'subjects': staff_reports,
-        'page_title': 'Report'
+        'page_title': 'Generate Report'
     }
 
     return render(request, 'staff_template/reports.html', context)
+
+
+
 
 
 def staff_calendar(request):
@@ -190,7 +193,7 @@ def staff_faq(request):
     
     context = {
         'subjects': staff_faq,
-        'page_title': 'Write Event'
+        'page_title': 'FAQ'
     }
 
     return render(request, 'staff_template/staff_faq.html', context)

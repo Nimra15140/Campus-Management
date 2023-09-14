@@ -19,7 +19,7 @@ def admin_home(request):
     total_students = Student.objects.all().count()
     subjects = Subject.objects.all()
     total_subject = subjects.count()
-    total_course = Course.objects.all().count()
+    total_course =Course.objects.all().count()
     attendance_list = Attendance.objects.filter(subject__in=subjects)
     total_attendance = attendance_list.count()
     attendance_list = []
@@ -30,7 +30,7 @@ def admin_home(request):
         attendance_list.append(attendance_count)
 
     # Total Subjects and students in Each Course
-    course_all = Course.objects.all()
+    course_all =Course.objects.all()
     course_name_list = []
     subject_count_list = []
     student_count_list_in_course = []
@@ -86,6 +86,24 @@ def admin_home(request):
     return render(request, 'hod_template/home_content.html', context)
 
 
+
+def download_file(request):
+    # Generate or fetch the file content
+    
+    file_content = request.POST.get()
+
+
+
+    # Create an HTTP response with content type 'application/octet-stream'
+    response = HttpResponse(file_content, content_type='application/octet-stream')
+
+    # Set the Content-Disposition header to specify the filename
+    response['Content-Disposition'] = 'attachment; filename="Report.txt"'
+
+    return response
+
+
+
 def add_staff(request):
     form = StaffForm(request.POST or None, request.FILES or None)
     context = {'form': form, 'page_title': 'Add Staff'}
@@ -104,7 +122,7 @@ def add_staff(request):
             passport_url = fs.url(filename)
             try:
                 user = CustomUser.objects.create_user(
-                    email=email, password=password, user_type=2, last_name=last_name, first_name=first_name,  profile_pic=passport_url)
+                    email=email, password=password, user_type=2, first_name=first_name, last_name=last_name,  profile_pic=passport_url)
                 user.gender = gender
                 user.address = address
                 user.staff.course = course
@@ -158,7 +176,7 @@ def add_course(request):
     form = CourseForm(request.POST or None)
     context = {
         'form': form,
-        'page_title': 'Add Course'
+        'page_title': 'Add Department'
     }
     if request.method == 'POST':
         if form.is_valid():
@@ -227,14 +245,18 @@ def hod_calendar(request):
     }
 
     return render(request, 'hod_template/calendar.html', context)
+ 
 def hod_reports(request):
     
     context = {
         'subjects': hod_reports,
-        'page_title': 'Report Generate'
+        'page_title': 'Generate Report'
     }
 
     return render(request, 'hod_template/reports.html', context)
+
+
+
 def manage_student(request):
     students = CustomUser.objects.filter(user_type=3)
     context = {
@@ -248,7 +270,7 @@ def manage_course(request):
     courses = Course.objects.all()
     context = {
         'courses': courses,
-        'page_title': 'Manage Courses'
+        'page_title': 'Manage Departments'
     }
     return render(request, "hod_template/manage_course.html", context)
 
@@ -366,7 +388,7 @@ def edit_course(request, course_id):
     context = {
         'form': form,
         'course_id': course_id,
-        'page_title': 'Edit Course'
+        'page_title': 'Edit Department'
     }
     if request.method == 'POST':
         if form.is_valid():
@@ -662,7 +684,7 @@ def send_student_notification(request):
                 'title': "Student Management System",
                 'body': message,
                 'click_action': reverse('student_view_notification'),
-                'icon': static('dist/img/AdminLTELogo.png')
+                'icon': static('dist/img/logo.jpg')
             },
             'to': student.admin.fcm_token
         }
@@ -689,7 +711,7 @@ def send_staff_notification(request):
                 'title': "Student Management System",
                 'body': message,
                 'click_action': reverse('staff_view_notification'),
-                'icon': static('dist/img/AdminLTELogo.png')
+                'icon': static('dist/img/logo.jpg')
             },
             'to': staff.admin.fcm_token
         }

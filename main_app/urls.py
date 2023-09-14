@@ -28,7 +28,7 @@ urlpatterns = [
     path("admin/home/", hod_views.admin_home, name='admin_home'),
     path("admin/faq/",hod_views.faq_template, name='faq_template'),
     path("staff/add", hod_views.add_staff, name='add_staff'),
-    path("course/add", hod_views.add_course, name='add_course'),
+    path("department/add", hod_views.add_course, name='add_course'),
     path("send_student_notification/", hod_views.send_student_notification,
          name='send_student_notification'),
     path("send_staff_notification/", hod_views.send_staff_notification,
@@ -63,6 +63,7 @@ urlpatterns = [
     path("course/manage/", hod_views.manage_course, name='manage_course'),
     path("subject/manage/", hod_views.manage_subject, name='manage_subject'),
     path("staff/edit/<int:staff_id>", hod_views.edit_staff, name='edit_staff'),
+    path('download/', hod_views.download_file, name='download_file'),
     path("staff/delete/<int:staff_id>",
          hod_views.delete_staff, name='delete_staff'),
 
@@ -84,7 +85,8 @@ urlpatterns = [
     path("subject/edit/<int:subject_id>",
          hod_views.edit_subject, name='edit_subject'),
     path("admin/calendar/", hod_views.hod_calendar, name='hod_calendar'),
-    path("admin/reports/", hod_views.hod_reports, name='hod_reports'),    
+    path("admin/reports/", hod_views.hod_reports, name='hod_reports'),   
+     
 
 
     # Staff
@@ -114,7 +116,8 @@ urlpatterns = [
     path('staff/result/fetch/', staff_views.fetch_student_result,
          name='fetch_student_result'),
     path("staff/calendar/", staff_views.staff_calendar, name='staff_calendar'),
-    path("staff/reports/", staff_views.staff_reports, name='staff_reports'),    
+    path("staff/reports/", staff_views.staff_reports, name='staff_reports'), 
+     
     path("staff/faq/", staff_views.staff_faq, name='staff_faq'),
 
 
@@ -137,4 +140,5 @@ urlpatterns = [
     path("student/calendar/", student_views.student_calendar, name='student_calendar'),
     path("student/reports/", student_views.student_reports, name='student_reports'),    
     path("student/faq/", student_views.student_faq, name='student_faq'),
+    
 ]
